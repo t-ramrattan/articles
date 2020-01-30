@@ -1,7 +1,6 @@
 package com.me.projects.articles.dao;
 
 import com.me.projects.articles.model.Article;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -9,6 +8,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import java.util.Collections;
 import java.util.List;
 
+import static org.junit.Assert.assertSame;
 import static org.mockito.Mockito.*;
 
 public class ArticlesDAOTest {
@@ -26,7 +26,7 @@ public class ArticlesDAOTest {
         final List<Article> expected = Collections.singletonList(mock(Article.class));
         doReturn(expected).when(this.operations).findAll(eq(Article.class));
         final List<Article> actual = this.daoUnderTest.getAllArticles();
-        Assert.assertSame(actual, expected);
+        assertSame(actual, expected);
     }
 
 }

@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: forbes
+
+spring.jackson.serialization.write-dates-as-timestamps: true

@@ -1,23 +1,21 @@
 package com.me.projects.articles.model;
 
-import java.util.Date;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@Document(collection = "articles")
 public class Article {
-    private int id;
+
+    @Id
+    private long id;
     private String author;
     private String content;
     private String title;
-    private Date date;
+    private String caption;
+    private String imgUrl;
 
-    public Article(final int id, final String author, final String content, final String title, final Date date) {
-        this.id = id;
-        this.author = author;
-        this.content = content;
-        this.title = title;
-        this.date = date;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -33,8 +31,12 @@ public class Article {
         return title;
     }
 
-    public Date getDate() {
-        return date;
+    public String getCaption() {
+        return caption;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 
 }

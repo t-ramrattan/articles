@@ -1,7 +1,10 @@
 package com.me.projects.articles.dao;
 
 import com.me.projects.articles.model.Article;
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +18,16 @@ public class ArticlesDAOImpl implements ArticlesDAO {
     }
 
     @Override
-    public List<Article> getAllArticles() {
+    public List<Article> getAllArticles() throws DataAccessException {
         return this.operations.findAll(Article.class);
+
+    }
+
+    @Override
+    public List<Article> getSlice(long id, int size) throws DataAccessException {
+        final Query query = new Query();
+        query.addCriteria(Criteria.where("id").gte(id)).limit(size);
+        return operations.find(query, Article.class);
     }
 
 }
