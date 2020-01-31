@@ -1,6 +1,4 @@
 spring:
   data:
     mongodb:
-      database: forbes
-
-spring.jackson.serialization.write-dates-as-timestamps: true
+      uri: mongodb+srv://${spring.data.mongodb.username}:${spring.data.mongodb.password}@${spring.data.mongodb.host}/${spring.data.mongodb.database}?retryWrites=true&w=majority
