@@ -9,10 +9,11 @@ class Home extends React.Component {
             currArticles: [],
             pageNumber: -1,
             pageSize: 2,
-            pages: 2
+            pages: 1
         }
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
+        this.numberOfPages = this.numberOfPages.bind(this);
     }
 
     componentDidMount() {
@@ -20,7 +21,7 @@ class Home extends React.Component {
     }
 
     nextPage() {
-        fetch(`/api/articles/paginated/?index=${(this.state.pageNumber + 1) * this.state.pageSize}&size=${this.state.pageSize}`)
+        fetch(`/api/vignette?index=${(this.state.pageNumber + 1) * this.state.pageSize}&size=${this.state.pageSize}`)
         .then((response) => {
             return response.json();
         })
@@ -32,8 +33,12 @@ class Home extends React.Component {
         });   
     }
 
+    numberOfPages() {
+
+    }
+
     prevPage() {
-        fetch(`/api/articles/paginated/?index=${(this.state.pageNumber * this.state.pageSize) - this.state.pageSize}&size=${this.state.pageSize}`)
+        fetch(`/api/vignette?index=${(this.state.pageNumber * this.state.pageSize) - this.state.pageSize}&size=${this.state.pageSize}`)
         .then((response) => {
             return response.json();
         })
