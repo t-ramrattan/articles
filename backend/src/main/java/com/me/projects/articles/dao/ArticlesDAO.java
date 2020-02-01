@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface ArticlesDAO {
     List<Article> getAllArticles() throws DataAccessException;
+
     List<Vignette> getSlice(long id, int size) throws DataAccessException;
 }

@@ -9,7 +9,9 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertSame;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
 
 public class ArticlesDAOTest {
     private ArticlesDAO daoUnderTest;
