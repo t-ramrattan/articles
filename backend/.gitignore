@@ -37,9 +37,3 @@ mvnw.*
 
 ### MAC ###
 **/.DS_Store
-
-### Node.js
-node_modules/
-node/
-build/
-dist/

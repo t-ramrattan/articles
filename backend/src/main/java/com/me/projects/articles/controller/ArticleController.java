@@ -1,12 +1,13 @@
 package com.me.projects.articles.controller;
 
 import com.me.projects.articles.dao.ArticlesDAO;
-import com.me.projects.articles.model.Article;
+import com.me.projects.articles.model.Vignette;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,7 @@ import java.util.List;
 import static java.util.Collections.emptyList;
 
 @RestController
+@RequestMapping("/api")
 public class ArticleController {
     private ArticlesDAO dao;
 
@@ -24,7 +26,7 @@ public class ArticleController {
     }
 
     @GetMapping("/articles/paginated")
-    public ResponseEntity<List<Article>> getPaginated(
+    public ResponseEntity<List<Vignette>> getPaginated(
             @RequestParam(required = false, defaultValue = "0") Integer index,
             @RequestParam(required = false, defaultValue = "10") Integer size
     ) {
