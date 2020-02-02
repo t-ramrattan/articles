@@ -1,8 +1,8 @@
 .NavigationContainer {
     padding-top: 20px;
     height: 100px;
-    min-width: 720px;
-    max-width: 720px;
+    min-width: 636px;
+    max-width: 628px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,3 +23,21 @@
 .Hidden {
     visibility: hidden;
 }
+
+.NavigationContainer i {
+    cursor: grab;
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 8px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
