@@ -4,6 +4,6 @@ import com.me.projects.articles.model.Paginate;
 
 public interface PaginationService<T> {
 
-  Paginate<T> getPagination(long page, int pageSize) throws PaginationServiceException;
+  Paginate<T> getPagination(int page, int pageSize) throws PaginationServiceException;
 
 }

@@ -20,7 +20,7 @@ public class VignettePaginationService implements PaginationService<Vignette> {
 
   @Override
   public Paginate<Vignette> getPagination(
-      long page,
+      int page,
       int pageSize
   ) throws PaginationServiceException {
     try {

@@ -6,10 +6,10 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currArticles: [],
-            pageNumber: -1,
-            pageSize: 2,
-            pages: 1
+            entries: [],
+            currentPage: -1,
+            pageSize: 1,
+            totalPages: 1
         }
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
@@ -21,14 +21,13 @@ class Home extends React.Component {
     }
 
     nextPage() {
-        fetch(`/api/vignette?index=${(this.state.pageNumber + 1) * this.state.pageSize}&size=${this.state.pageSize}`)
+        fetch(`/api/paginated?page=${(this.state.currentPage + 1) * this.state.pageSize}&size=${this.state.pageSize}`)
         .then((response) => {
             return response.json();
         })
         .then((json) => {
             this.setState({
-                pageNumber: this.state.pageNumber + 1,
-                currArticles: json
+                ...json
             })
         });   
     }
@@ -38,14 +37,13 @@ class Home extends React.Component {
     }
 
     prevPage() {
-        fetch(`/api/vignette?index=${(this.state.pageNumber * this.state.pageSize) - this.state.pageSize}&size=${this.state.pageSize}`)
+        fetch(`/api/paginated?page=${(this.state.currentPage * this.state.pageSize) - this.state.pageSize}&size=${this.state.pageSize}`)
         .then((response) => {
             return response.json();
         })
         .then((json) => {
             this.setState({
-                pageNumber: this.state.pageNumber - 1,
-                currArticles: json
+                ...json
             })
         });   
     }
@@ -54,12 +52,12 @@ class Home extends React.Component {
         return (
             <div>
                 <div>
-                {this.state.currArticles.map((a) => {
+                {this.state.entries.map((a) => {
                     return <Vignette key={a.id} {...a}/>
                 })}
                 </div>
-                {this.state.pageNumber > 0 ? (<button onClick={this.prevPage}>prev</button>) : null }
-                {this.state.pageNumber < this.state.pages - 1 ? (<button onClick={this.nextPage}>next</button>) : null }
+                {this.state.currentPage > 0 ? (<button onClick={this.prevPage}>prev</button>) : null }
+                {this.state.currentPage < this.state.totalPages - 1 ? (<button onClick={this.nextPage}>next</button>) : null }
             </div>
         )
     }

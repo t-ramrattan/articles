@@ -25,7 +25,7 @@ public class VignettePaginationServiceTest {
 
   @Test
   public void should_return_paginated_vignettes() throws PaginationServiceException {
-    final long page = 0;
+    final int page = 0;
     final int pageSize = 1;
     final List<Vignette> vignettes = Arrays.asList(mock(Vignette.class), mock(Vignette.class));
 
