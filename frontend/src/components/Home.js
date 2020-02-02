@@ -8,7 +8,7 @@ class Home extends React.Component {
         this.state = {
             entries: [],
             currentPage: -1,
-            pageSize: 1,
+            pageSize: 2,
             totalPages: 1
         }
         this.nextPage = this.nextPage.bind(this);
@@ -56,8 +56,10 @@ class Home extends React.Component {
                     return <Vignette key={a.id} {...a}/>
                 })}
                 </div>
-                {this.state.currentPage > 0 ? (<button onClick={this.prevPage}>prev</button>) : null }
-                {this.state.currentPage < this.state.totalPages - 1 ? (<button onClick={this.nextPage}>next</button>) : null }
+                <div>
+                    {this.state.currentPage > 0 ? (<button onClick={this.prevPage}>prev</button>) : null }
+                    {this.state.currentPage < this.state.totalPages - 1 ? (<button onClick={this.nextPage}>next</button>) : null }
+                </div>
             </div>
         )
     }
