@@ -1,0 +1,24 @@
+.Container {
+    min-width: 720px;
+    max-width: 720px;
+    padding-top: 10px;
+    width: 75%;
+    margin: auto;
+}
+
+.Image {
+    display: block;
+    width: 498px;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Text {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

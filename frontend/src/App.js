@@ -5,8 +5,8 @@ import {
   Route,
   Switch 
 } from 'react-router-dom';
-import Home from './components/Home';
-import Article from './components/Article';
+import Home from './components/home/Home';
+import Article from './components/article/Article';
 
 function App() {
   return (

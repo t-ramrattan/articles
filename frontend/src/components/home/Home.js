@@ -1,5 +1,6 @@
 import React from 'react';
-import Vignette from './Vignette';
+import Vignette from '../vignette/Vignette';
+import './Style.css'
 
 class Home extends React.Component {
 
@@ -13,11 +14,14 @@ class Home extends React.Component {
         }
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
-        this.numberOfPages = this.numberOfPages.bind(this);
     }
 
     componentDidMount() {
         this.nextPage();
+    }
+
+    componentWillUpdate() {
+        window.scrollTo(0,0);
     }
 
     nextPage() {
@@ -30,10 +34,6 @@ class Home extends React.Component {
                 ...json
             })
         });   
-    }
-
-    numberOfPages() {
-
     }
 
     prevPage() {
@@ -56,9 +56,9 @@ class Home extends React.Component {
                     return <Vignette key={a.id} {...a}/>
                 })}
                 </div>
-                <div style={{width:'200px',margin:'auto'}}>
-                    {this.state.currentPage > 0 ? (<button style={{width:100}} onClick={this.prevPage}>prev</button>) : null }
-                    {this.state.currentPage < this.state.totalPages - 1 ? (<button style={{width:100}} onClick={this.nextPage}>next</button>) : null }
+                <div className='NavigationContainer'>
+                    <button className={`Button ${this.state.currentPage > 0 ? 'PrevButton' : 'Hidden'}`} onClick={this.prevPage}>prev</button>
+                    <button className={`Button ${this.state.currentPage < this.state.totalPages - 1 ? 'NextButton' : 'Hidden'}`} onClick={this.nextPage}>next</button>
                 </div>
             </div>
         )

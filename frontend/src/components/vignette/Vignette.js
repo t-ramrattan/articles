@@ -1,18 +1,16 @@
 import React from 'react';
+import './Style.css';
 
 class Vignette extends React.Component {
     
     render() {
         return(
-            <div style={{margin:'auto', padding:'10px'}}>
+            <div className='Container'>
                 <a href={`/article/${this.props.id}`} target='_blank'>
-                    <img 
-                        style={{display:'block', width:'498px',height:'280px',marginLeft:'auto', marginRight:'auto'}}
-                        src={this.props.imgUrl} alt={this.props.imgUrl}
-                    />
+                    <img className='Image' src={this.props.imgUrl} alt={this.props.imgUrl} />
                 </a>
-                <div style={{textAlign:'center',width:'100%'}}>
-                    <a target='_blank' href={`/article/${this.props.id}`} style={{textDecoration:'none', color:'black'}}>
+                <div className='Text'>
+                    <a target='_blank' href={`/article/${this.props.id}`}>
                         <h3>{this.props.title}</h3>
                         <span>by <b>{this.props.author}</b></span>
                         <p style={{textAlign:'left',width:'100%'}}>{this.props.caption}</p>
