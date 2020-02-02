@@ -8,7 +8,7 @@ class Home extends React.Component {
         this.state = {
             entries: [],
             currentPage: -1,
-            pageSize: 2,
+            pageSize: 10,
             totalPages: 1
         }
         this.nextPage = this.nextPage.bind(this);
@@ -21,7 +21,7 @@ class Home extends React.Component {
     }
 
     nextPage() {
-        fetch(`/api/paginated?page=${(this.state.currentPage + 1) * this.state.pageSize}&size=${this.state.pageSize}`)
+        fetch(`/api/paginated?page=${(this.state.currentPage + 1)}&size=${this.state.pageSize}`)
         .then((response) => {
             return response.json();
         })
@@ -37,7 +37,7 @@ class Home extends React.Component {
     }
 
     prevPage() {
-        fetch(`/api/paginated?page=${(this.state.currentPage -1)}&size=${this.state.pageSize}`)
+        fetch(`/api/paginated?page=${(this.state.currentPage - 1)}&size=${this.state.pageSize}`)
         .then((response) => {
             return response.json();
         })
@@ -56,9 +56,9 @@ class Home extends React.Component {
                     return <Vignette key={a.id} {...a}/>
                 })}
                 </div>
-                <div>
-                    {this.state.currentPage > 0 ? (<button onClick={this.prevPage}>prev</button>) : null }
-                    {this.state.currentPage < this.state.totalPages - 1 ? (<button onClick={this.nextPage}>next</button>) : null }
+                <div style={{width:'200px',margin:'auto'}}>
+                    {this.state.currentPage > 0 ? (<button style={{width:100}} onClick={this.prevPage}>prev</button>) : null }
+                    {this.state.currentPage < this.state.totalPages - 1 ? (<button style={{width:100}} onClick={this.nextPage}>next</button>) : null }
                 </div>
             </div>
         )
