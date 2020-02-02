@@ -26,15 +26,16 @@ public class VignettePaginationServiceTest {
   @Test
   public void should_return_paginated_vignettes() throws PaginationServiceException {
     final int page = 0;
-    final int pageSize = 1;
-    final List<Vignette> vignettes = Arrays.asList(mock(Vignette.class), mock(Vignette.class));
+    final int pageSize = 2;
+    final List<Vignette> vignettes = Arrays
+        .asList(mock(Vignette.class), mock(Vignette.class), mock(Vignette.class));
 
-    doReturn(2L).when(this.articlesDAO).getNumberOfArticles();
-    doReturn(vignettes.subList(0, pageSize)).when(this.articlesDAO).getSlice(0, 1);
+    doReturn(3L).when(this.articlesDAO).getNumberOfArticles();
+    doReturn(vignettes.subList(0, pageSize)).when(this.articlesDAO).getSlice(0, pageSize);
 
     Paginate<Vignette> paginate = this.serviceUnderTest.getPagination(page, pageSize);
 
-    assertEquals(1, paginate.getEntries().size());
+    assertEquals(2, paginate.getEntries().size());
     assertEquals(page, paginate.getCurrentPage());
     assertEquals(pageSize, paginate.getPageSize());
     assertEquals(2, paginate.getTotalPages());

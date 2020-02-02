@@ -37,7 +37,7 @@ class Home extends React.Component {
     }
 
     prevPage() {
-        fetch(`/api/paginated?page=${(this.state.currentPage * this.state.pageSize) - this.state.pageSize}&size=${this.state.pageSize}`)
+        fetch(`/api/paginated?page=${(this.state.currentPage -1)}&size=${this.state.pageSize}`)
         .then((response) => {
             return response.json();
         })
