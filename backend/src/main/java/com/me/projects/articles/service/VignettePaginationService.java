@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class VignettePaginationService implements PaginationService<Vignette> {
 
@@ -26,13 +24,10 @@ public class VignettePaginationService implements PaginationService<Vignette> {
     ) throws PaginationServiceException {
         try {
             final double numberOfArticles = this.articlesDAO.getNumberOfArticles();
-            final int pages = (int) Math.ceil(numberOfArticles / pageSize);
-            int index = page * pageSize;
-            final List<Vignette> vignettes = this.articlesDAO.getSlice(index, pageSize);
             return new Paginate<>(
-                    vignettes,
+                    this.articlesDAO.getSlice(page * pageSize, pageSize),
                     page,
-                    pages,
+                    (int) Math.ceil(numberOfArticles / pageSize),
                     pageSize
             );
         } catch (DataAccessException ex) {

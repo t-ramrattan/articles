@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Switch>
-      <Route path='/article/:id' component={Article}/>
-      <Route path='/' component={Home}/>
+        <Route path='/article/:id' component={Article}/>
+        <Route path='/' component={Home}/>
       </Switch>
     </Router>
   );

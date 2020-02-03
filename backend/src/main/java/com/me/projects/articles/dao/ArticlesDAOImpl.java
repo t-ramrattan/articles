@@ -32,8 +32,9 @@ public class ArticlesDAOImpl implements ArticlesDAO {
 
     @Override
     public List<Vignette> getSlice(int index, int size) throws DataAccessException {
-        final Query query = new Query();
-        query.addCriteria(Criteria.where("id").gte(index)).limit(size);
+        final Query query = new Query()
+                .addCriteria(Criteria.where("id").gte(index))
+                .limit(size);
         return operations.find(query, Vignette.class);
     }
 

@@ -38,8 +38,7 @@ public class ArticleController {
             @RequestParam(required = false, defaultValue = "10") Integer size
     ) {
         try {
-            Paginate<Vignette> paginate = paginationService.getPagination(page, size);
-            return ResponseEntity.ok(paginate);
+            return ResponseEntity.ok(paginationService.getPagination(page, size));
         } catch (PaginationServiceException ex) {
             return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(null);
         }

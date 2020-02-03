@@ -57,8 +57,14 @@ class Home extends React.Component {
                 })}
                 </div>
                 <div className='NavigationContainer'>
-                    <i className={`arrow left ${this.state.currentPage > 0 ? 'PrevButton' : 'Hidden'}`} onClick={this.prevPage}></i>
-                    <i className={`arrow right ${this.state.currentPage < this.state.totalPages - 1 ? 'NextButton' : 'Hidden'}`} onClick={this.nextPage}></i>
+                    <i 
+                        className={`arrow left ${this.state.currentPage > 0 ? 'PrevButton' : 'Hidden'}`} 
+                        onClick={this.prevPage}>
+                    </i>
+                    <i 
+                        className={`arrow right ${this.state.currentPage < this.state.totalPages - 1 ? 'NextButton' : 'Hidden'}`}
+                        onClick={this.nextPage}>
+                    </i>
                 </div>
             </div>
         )
