@@ -10,7 +10,8 @@ The following VM arguments are needed.
 ```
 
 -Dspring.data.mongodb.username=<username>
--Dspring.data.mongodb.password=<password>-Dspring.data.mongodb.host=<cluster>
+-Dspring.data.mongodb.password=<password>
+-Dspring.data.mongodb.host=<cluster>
 -Dspring.data.mongodb.database=<database>
 
 ```
