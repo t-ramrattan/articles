@@ -28,7 +28,7 @@ class Article extends React.Component {
                 <img src={this.state.article.imgUrl}/>
                 <h1>{this.state.article.title}</h1>
                 <p>by <b>{this.state.article.author}</b></p>
-                <div>{ ReactHtmlParser(this.state.article.content)}</div>
+                <div>{ReactHtmlParser(this.state.article.content)}</div>
             </div>
         );
     }
