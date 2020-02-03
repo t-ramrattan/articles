@@ -18,7 +18,9 @@ The following VM arguments are needed.
 ### Frontend
 The frontend code is located in the frontend directory. When the frontend is served by the node development server all
 api calls will be proxied to the backend application.
-> yarn start # will start a node server on port 3000
+```
+$ yarn start # will start a node server on port 3000
+```
 
 ## Build and Run
 ### Build Application
