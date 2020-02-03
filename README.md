@@ -27,4 +27,6 @@ static resource folder of the backend application.
 > mvn clean package
 
 ### Run Application
-> java -Dspring.data.mongodb.username=<username> -Dspring.data.mongodb.password=<password> -Dspring.data.mongodb.host=<cluster> -Dspring.data.mongodb.database=<database> -jar <path to jar>
+```
+$ java -Dspring.data.mongodb.username=<username> -Dspring.data.mongodb.password=<password> -Dspring.data.mongodb.host=<cluster> -Dspring.data.mongodb.database=<database> -jar <path to jar>
+```
