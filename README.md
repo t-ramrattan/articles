@@ -24,9 +24,13 @@ $ yarn start # will start a node server on port 3000
 
 ## Build and Run
 ### Build Application
-The frontend and backend can be built by simply running. The frontend application will be built and placed into the
-static resource folder of the backend application.
-> mvn clean package
+
+The frontend and backend can be built by simply running the following command.
+```
+$ mvn clean package
+```
+The frontend application will be built and placed into the static resource folder of the backend application. The backend 
+application will serve the single page application as it's index page.
 
 ### Run Application
 ```
