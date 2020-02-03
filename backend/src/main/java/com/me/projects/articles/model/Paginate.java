@@ -4,31 +4,31 @@ import java.util.List;
 
 public class Paginate<T> {
 
-  List<T> entries;
-  long currentPage;
-  long totalPages;
-  int pageSize;
+    private List<T> entries;
+    private int currentPage;
+    private int totalPages;
+    private int pageSize;
 
-  public Paginate(List<T> entries, long currentPage, int totalPages, int pageSize) {
-    this.entries = entries;
-    this.currentPage = currentPage;
-    this.totalPages = totalPages;
-    this.pageSize = pageSize;
-  }
+    public Paginate(List<T> entries, int currentPage, int totalPages, int pageSize) {
+        this.entries = entries;
+        this.currentPage = currentPage;
+        this.totalPages = totalPages;
+        this.pageSize = pageSize;
+    }
 
-  public List<T> getEntries() {
-    return entries;
-  }
+    public List<T> getEntries() {
+        return entries;
+    }
 
-  public long getCurrentPage() {
-    return currentPage;
-  }
+    public int getCurrentPage() {
+        return currentPage;
+    }
 
-  public long getTotalPages() {
-    return totalPages;
-  }
+    public int getTotalPages() {
+        return totalPages;
+    }
 
-  public int getPageSize() {
-    return pageSize;
-  }
+    public int getPageSize() {
+        return pageSize;
+    }
 }
