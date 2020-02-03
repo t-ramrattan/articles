@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface ArticlesDAO {
     Optional<Article> getArticle(Long id) throws DataAccessException;
 
-    List<Vignette> getSlice(long index, int size) throws DataAccessException;
+    List<Vignette> getSlice(int index, int size) throws DataAccessException;
 
     long getNumberOfArticles() throws DataAccessException;
 }

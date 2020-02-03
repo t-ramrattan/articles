@@ -9,7 +9,7 @@ public class Paginate<T> {
   long totalPages;
   int pageSize;
 
-  public Paginate(List<T> entries, long currentPage, long totalPages, int pageSize) {
+  public Paginate(List<T> entries, long currentPage, int totalPages, int pageSize) {
     this.entries = entries;
     this.currentPage = currentPage;
     this.totalPages = totalPages;

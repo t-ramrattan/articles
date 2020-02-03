@@ -50,7 +50,7 @@ public class ArticlesDAOTest {
 
   @Test
   public void should_fetch_slice_of_vignette_by_index_and_size() throws DataAccessException {
-    final long index = 0;
+    final int index = 0;
     final int size = 10;
     final List<Vignette> expected = Collections.singletonList(mock(Vignette.class));
     final Query query = new Query();

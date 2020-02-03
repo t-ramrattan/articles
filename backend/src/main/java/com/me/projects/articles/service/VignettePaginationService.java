@@ -26,7 +26,7 @@ public class VignettePaginationService implements PaginationService<Vignette> {
     ) throws PaginationServiceException {
         try {
             final double numberOfArticles = this.articlesDAO.getNumberOfArticles();
-            final long pages = (long) Math.ceil(numberOfArticles / pageSize);
+            final int pages = (int) Math.ceil(numberOfArticles / pageSize);
             int index = page * pageSize;
             final List<Vignette> vignettes = this.articlesDAO.getSlice(index, pageSize);
             return new Paginate<>(
