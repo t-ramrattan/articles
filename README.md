@@ -76,6 +76,12 @@ Articles have been generated using a python script, located in the backend resou
 were saved in the articles.json file located in the backend resources folder. The articles within that file have been
 stored on the mongodb atlas cluster. The backend will source data from the cluster.
 
+> To connect to the cluster/database that was setup for this project contact me. I will provide the required credentials
+and values needed. 
+
+> To connect to your own cluster/database insert the in backedend/resources/articles.json into a collection within a 
+database and supply the required vm args values when starting up the backend.
+
 ** Note  
 The Application was built and tested with the following technologies and versions.  
 IntelliJ IDEA Community  2018.2  
