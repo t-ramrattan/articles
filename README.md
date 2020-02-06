@@ -79,8 +79,8 @@ stored on the mongodb atlas cluster. The backend will source data from the clust
 > To connect to the cluster/database that was setup for this project contact me. I will provide the required credentials
 and values needed. 
 
-> To connect to your own cluster/database insert the in backedend/resources/articles.json into a collection within a 
-database and supply the required vm args values when starting up the backend.
+> To connect to your own cluster/database insert the json objects from backedend/resources/articles.json into a collection 
+within a database and supply the required vm args values when starting up the backend.
 
 ** Note  
 The Application was built and tested with the following technologies and versions.  
