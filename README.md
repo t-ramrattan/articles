@@ -3,7 +3,7 @@ This is an application that couples the backend and frontend into a single proje
 application and the backend is a SpringBoot application. MongoDB Atlas is used as the data source.   
 
 ## Build & Run
-###Backend & Frontend via Command Line
+### Backend & Frontend via Command Line
 
 > Navigate to the backend directory.
 
