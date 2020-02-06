@@ -33,7 +33,7 @@ Before executing the below command navigate to the project parent directory.
 $ java -Dspring.data.mongodb.username=<username> -Dspring.data.mongodb.password=<password> -Dspring.data.mongodb.host=<cluster> -Dspring.data.mongodb.database=<database> -jar backend/target/backend-0.0.1-SNAPSHOT.jar 
 ```
 
-After the application starts the home page can be viewed visiting localhost:8080 in a browser.
+After the application starts the home page can be viewed by visiting localhost:8080 in a browser.
 
 ### Backend with an IDE
 With your favorite IDE build and run the backend with the following vm args.
@@ -77,7 +77,7 @@ were saved in the articles.json file located in the backend resources folder. Th
 stored on the mongodb atlas cluster. The backend will source data from the cluster.
 
 ** Note  
-The Application was built and tested with the following technology and versions.  
+The Application was built and tested with the following technologies and versions.  
 IntelliJ IDEA Community  2018.2  
 Java 1.8.0_152   
 NPM 6.13.1  
