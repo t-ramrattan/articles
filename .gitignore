@@ -43,3 +43,5 @@ node_modules/
 node/
 build/
 dist/
+**/*.lock
+**/package-lock.json
