@@ -77,7 +77,7 @@ were saved in the articles.json file located in the backend resources folder. Th
 stored on the mongodb atlas cluster. The backend will source data from the cluster.
 
 ** Note  
-The Application was built and tested with the following technology and versions. 
+The Application was built and tested with the following technology and versions.   
 Java 1.8.0_152   
 NPM 6.13.1  
 Node 12.14.1  
